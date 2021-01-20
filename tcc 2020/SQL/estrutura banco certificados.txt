@@ -1,0 +1,23 @@
+use cadastro;
+
+create table certificado(
+
+id_certificado integer auto_increment not null,
+nomeTitular varchar(60),
+cpfTitular varchar (20),
+nomeCertificado varchar(60) not null,
+cpf_cnpj varchar(20) not null,
+tipoCertificado varchar(10) not null,
+email varchar(60) not null,
+midia varchar(12) not null,
+acCertificado varchar(30) not null,
+dataEmissao date not null,
+dataValidade date not null,
+serialNumber varchar(30),
+notifica1 varchar(5),
+notifica15 varchar(5),
+notifica30 varchar(5),
+id_fk_cliente int(6) not null,
+primary key(id_certificado),
+foreign key(id_fk_cliente) references cliente(id)
+)

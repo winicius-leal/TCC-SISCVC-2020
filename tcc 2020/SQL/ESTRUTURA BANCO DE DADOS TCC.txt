@@ -1,0 +1,125 @@
+use cadastro;
+
+
+
+create table cliente(
+
+
+id_cliente int auto_increment not null,
+nome varchar(30) not null,
+cpf varchar(30) not null, 
+telefoneCel varchar (20) not null,
+telefoneFixo varchar (20),
+email varchar (60) not null,
+primary key(id_cliente)
+
+)
+
+create table usuario(
+
+id_usuario int auto_increment not null,
+nome varchar(100) not null,
+cpf varchar(15) not null, 
+login varchar(50) not null,
+senha national character(200) not null,
+confirmarSenha national character(200) not null,
+email varchar(100) not null,
+
+primary key(id_usuario)
+
+)ENGINE=InnoDB DEFAULT CHARSET=ascii
+
+
+create table certificado_usuario(
+
+id_certificado integer auto_increment not null,
+nomeCertificado varchar(60) not null,
+cpf_certificado varchar(20) not null,
+email varchar(60) not null,
+dataEmissao date not null,
+dataValidade date not null,
+serialNumber varchar(30),
+id_fk_usuario int(6) not null,
+primary key(id_certificado),
+foreign key(id_fk_usuario) references usuario(id_usuario)
+)
+
+
+create table certificado_cliente(
+
+id_certificado integer auto_increment not null,
+nomeTitular varchar(60),
+cpfTitular varchar (20),
+nomeCertificado varchar(60) not null,
+cpf_cnpj varchar(20) not null,
+tipoCertificado varchar(10) not null,
+email varchar(60) not null,
+midia varchar(12) not null,
+acCertificado varchar(30) not null,
+dataEmissao date not null,
+dataValidade date not null,
+serialNumber varchar(30),
+notifica1 varchar(5),
+notifica15 varchar(5),
+notifica30 varchar(5),
+id_fk_cliente int(6) not null,
+primary key(id_certificado),
+foreign key(id_fk_cliente) references cliente(id)
+)
+
+
+
+
+use cadastro;
+
+ ALTER DATABASE `cadastro` CHARSET = UTF8 COLLATE = utf8_general_ci;
+ ALTER DATABASE `cadastro` CHARSET = Latin1 COLLATE = latin1_swedish_ci;
+ALTER DATABASE `cadastro` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+SET SESSION CHARACTER_SET_CLIENT = utf8mb4;
+SET SESSION CHARACTER_SET_RESULTS = utf8mb4;
+
+SET SESSION CHARACTER_SET_CLIENT = utf8mb4; 
+SET SESSION CHARACTER_SET_RESULTS = utf8mb4;
+
+
+
+select *from usuario;
+
+drop table usuario;
+
+create table usuario(
+
+id_usuario int auto_increment not null,
+nome varchar(100) not null,
+cpf varchar(15) not null, 
+login varchar(50) not null,
+senha national character(200) not null,
+confirmarSenha national character(200) not null,
+email varchar(100) not null,
+
+primary key(id_usuario)
+
+)ENGINE=InnoDB DEFAULT CHARSET=ascii
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

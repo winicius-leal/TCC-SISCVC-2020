@@ -1,0 +1,13 @@
+create table certificado_usuario(
+
+id_certificado integer auto_increment not null,
+nomeCertificado varchar(60) not null,
+cpf_certificado varchar(20) not null,
+email varchar(60) not null,
+dataEmissao date not null,
+dataValidade date not null,
+serialNumber varchar(30),
+id_fk_usuario int(6) not null,
+primary key(id_certificado),
+foreign key(id_fk_usuario) references usuario(id_usuario)
+)

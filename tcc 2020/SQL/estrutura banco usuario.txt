@@ -1,0 +1,14 @@
+create table usuario(
+
+id_usuario int auto_increment not null,
+perfil varchar (30) not null,
+nome varchar(100) not null,
+cpf varchar(20) not null, 
+login varchar(60) not null,
+senha varchar(30) not null,
+confirmarSenha varchar(30) not null,
+email varchar(60) not null,
+
+primary key(id_usuario)
+
+)
